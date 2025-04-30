@@ -1,6 +1,5 @@
+import { API_URL } from "@/constants";
 import type { Product } from "@/features/product/product.type";
-
-const API_URL = "https://fakestoreapi.com";
 
 export async function getProducts(): Promise<Product[]> {
   try {

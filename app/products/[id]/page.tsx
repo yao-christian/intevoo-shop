@@ -1,18 +1,18 @@
-import { getProduct, getProducts } from "@/lib/api";
-import { formatPrice } from "@/lib/utils";
+import { getProduct, getProducts } from "@/features/product/requests";
+import { formatPrice } from "@/utils";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/features/product/ui/add-to-cart-button";
 
 type Props = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = await getProduct(params.id);
+  const { id } = await params;
+
+  const product = await getProduct(id);
 
   if (!product) {
     return {
@@ -38,7 +38,8 @@ export async function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: Props) {
-  const product = await getProduct(params.id);
+  const id = (await params).id;
+  const product = await getProduct(id);
 
   if (!product) {
     notFound();

@@ -1,5 +1,5 @@
 import ProductList from "./product-list";
-import { getProducts } from "@/lib/api";
+import { getProducts } from "@/features/product/requests";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,9 +12,9 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Nos Produits</h1>
       <ProductList products={products} />
-    </main>
+    </div>
   );
 }

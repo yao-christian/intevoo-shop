@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useAppSelector } from "@/lib/hooks";
-import { formatPrice } from "@/lib/utils";
+import { useAppSelector } from "@/store/hooks";
+import { formatPrice } from "@/utils";
 import CartItem from "./cart-item";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag } from "lucide-react";

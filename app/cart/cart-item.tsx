@@ -3,17 +3,17 @@
 import Link from "next/link";
 
 import type { CartItem as CartItemType } from "@/features/cart/cart.type";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice } from "@/utils";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2 } from "lucide-react";
-import { useAppDispatch } from "@/lib/hooks";
+import { useAppDispatch } from "@/store/hooks";
 
 import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
-} from "@/lib/features/cart/cartSlice";
+} from "@/features/cart/cart.state";
 
 type CartItemProps = {
   item: CartItemType;

@@ -5,7 +5,7 @@ import type React from "react";
 import Link from "next/link";
 import { ShoppingCart, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAppSelector } from "@/lib/hooks";
+import { useAppSelector } from "@/store/hooks";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -22,6 +22,9 @@ export default function Header() {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/?search=${encodeURIComponent(searchQuery)}`);
+    } else {
+      router.push("/");
+      setSearchQuery("");
     }
   };
 

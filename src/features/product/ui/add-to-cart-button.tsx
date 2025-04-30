@@ -3,8 +3,8 @@
 import type { Product } from "@/features/product/product.type";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
-import { useAppDispatch } from "@/lib/hooks";
-import { addToCart } from "@/lib/features/cart/cartSlice";
+import { useAppDispatch } from "@/store/hooks";
+import { addToCart } from "@/features/cart/cart.state";
 import { useToast } from "@/components/ui/use-toast";
 
 interface AddToCartButtonProps {

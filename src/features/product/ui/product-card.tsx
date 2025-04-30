@@ -1,5 +1,5 @@
 import type { Product } from "@/features/product/product.type";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";

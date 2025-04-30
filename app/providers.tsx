@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { store } from "@/lib/store";
+import { store } from "@/store/config";
 import { Provider } from "react-redux";
 import { Toaster } from "@/components/ui/toaster";
 

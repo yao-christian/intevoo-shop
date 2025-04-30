@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit"
-import cartReducer from "./features/cart/cartSlice"
+import { configureStore } from "@reduxjs/toolkit";
+import cartReducer from "@/features/cart/cart.state";
 
 export const store = configureStore({
   reducer: {
@@ -10,7 +10,7 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: false,
     }),
-})
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
